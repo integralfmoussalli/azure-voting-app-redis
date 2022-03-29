@@ -19,7 +19,8 @@ pipeline {
         }
         stage('Start test app') {
             steps {
-                sh '''docker-compose up -d
+                sh '''docker-compose down
+                docker-compose up -d
                 ./scripts/test_container.ps1'''
             }
             post {
